@@ -46,7 +46,7 @@
                 @forelse ($projects as $project)
                 <tr>
                     <td>{{$project->id}}</td>
-                    <td>{{$project->name}}</td>
+                    <td>{{$project->name}} <span class="badge text-bg-info">{{ $project->type?->name }}</span></td>
                     <td>{{$project->client_name}}</td>
                     <td class="d-flex">
                         <a href="{{ route('admin.project.show', $project) }}" class="btn btn-primary me-2"><i class="fa-solid fa-eye"></i></a>

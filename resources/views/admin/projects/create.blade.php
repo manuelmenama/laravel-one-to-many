@@ -43,6 +43,23 @@
             @enderror
         </div>
         <div class="mb-3">
+            <label for="type" class="form-label">Select type</label>
+            <select class="form-select" aria-label="Default select example" id="type" name="type_id">
+                <option>Seleziona il tipo</option>
+                @foreach ($types as $type)
+                    <option
+                        @if ($type->id == old('type_id'))
+                            selected
+                        @endif
+                        value="{{ $type->id }}">
+                        {{ $type->name }}
+                    </option>
+                @endforeach
+
+              </select>
+        </div>
+
+        <div class="mb-3">
             <label for="cover_image" class="form-label">Cover image</label>
             <input
                 onchange="showImage(event)"
